@@ -1,0 +1,37 @@
+{
+  "name": "grid-table",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "main": "./dist/grid-table.umd.cjs",
+  "module": "./dist/grid-table.js",
+  "exports": {
+    ".": {
+      "import": "./dist/grid-table.js",
+      "require": "./dist/grid-table.umd.cjs"
+    },
+    "./style.css": "./dist/grid-table.css"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:demo": "vite build --config vite.demo.config.js --outDir dist-demo",
+    "preview": "vite preview",
+    "test": "node --test src/core/*.test.js"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^5.4.21",
+    "vue": "^3.5.16"
+  }
+}

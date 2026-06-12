@@ -1,0 +1,262 @@
+:root {
+  color: #202733;
+  background: #f6f8fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  min-height: 32px;
+  border: 1px solid #aeb8c8;
+  border-radius: 6px;
+  background: #fff;
+  color: #202733;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.workspace,
+.side-panel {
+  min-width: 0;
+  border: 1px solid #d8dde6;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.workspace {
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid #d8dde6;
+}
+
+.grid-table {
+  padding: 16px;
+  overflow: auto;
+}
+
+.grid-table__title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.grid-table__title-row h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.grid-table__title-row span {
+  color: #647084;
+  font-size: 13px;
+}
+
+.grid-table__scroll {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.grid-table-header,
+.grid-table__body {
+  display: inline-grid;
+  min-width: max-content;
+  width: 100%;
+}
+
+.grid-table-header {
+  border-top: 1px solid #aeb8c8;
+  border-left: 1px solid #aeb8c8;
+}
+
+.grid-table-header__cell {
+  position: relative;
+  min-height: 40px;
+  border-right: 1px solid #aeb8c8;
+  border-bottom: 1px solid #aeb8c8;
+  background: #f0f4fa;
+}
+
+.grid-table-header__cell input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0 18px 0 10px;
+  background: transparent;
+  font-weight: 700;
+  outline: 0;
+}
+
+.grid-table-header__resizer {
+  position: absolute;
+  top: 0;
+  right: -4px;
+  z-index: 1;
+  width: 8px;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: col-resize;
+}
+
+.grid-table-header__resizer:hover {
+  background: rgba(37, 99, 235, 0.18);
+}
+
+.grid-table__body {
+  border-left: 1px solid #aeb8c8;
+}
+
+.grid-table__cell {
+  display: flex;
+  min-height: 56px;
+  padding: 6px;
+  border: 0;
+  border-right: 1px solid #aeb8c8;
+  border-bottom: 1px solid #aeb8c8;
+  border-radius: 0;
+  text-align: left;
+}
+
+.grid-table__cell--selected {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+}
+
+.grid-table__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 6px;
+  color: #647084;
+  font-size: 12px;
+}
+
+.mock-component {
+  width: 100%;
+  min-height: 40px;
+  padding: 7px 8px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.mock-component__label {
+  margin-bottom: 2px;
+  color: #647084;
+  font-size: 11px;
+}
+
+.mock-component__value {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.mock-component__type {
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel {
+  padding: 12px;
+  border-bottom: 1px solid #d8dde6;
+}
+
+.panel--grow {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.panel h3 {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.swatches button {
+  width: 28px;
+  min-height: 28px;
+  padding: 0;
+  border-radius: 50%;
+}
+
+textarea {
+  flex: 1;
+  min-height: 280px;
+  resize: none;
+  border: 1px solid #d8dde6;
+  border-radius: 6px;
+  padding: 8px;
+  color: #202733;
+  font-family: Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.json-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 13px;
+}
+
+@media (max-width: 960px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+}
