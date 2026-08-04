@@ -8,3 +8,6 @@ grid-table-vue3 是 vue3 版本的页面展示
 grid table.md 是对组件界面的进一步介绍
 
 grid-table-spec.md 是 spec 文档如果大家想自己做一个把文档给 agent 即可复刻
+
+<img width="1022" height="360" alt="image" src="https://github.com/user-attachments/assets/9aa05f64-7b71-4803-a005-07572f482f75" />
+
